@@ -12,4 +12,5 @@
     </string-array>
         <string name="Description">Description</string>
     <string name="logo">Logo Applicazione</string>
+    <string name="Picture">Take a picture</string>
 </resources>

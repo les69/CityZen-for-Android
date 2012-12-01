@@ -1,5 +1,6 @@
 package android.project.CityZen;
 
+import android.graphics.Bitmap;
 import android.util.Base64;
 
 enum Category
@@ -13,6 +14,7 @@ public class Report  {
 	private static Category _category;
 	private static String _base64image;
 	private static Report _report = null;
+	private static Bitmap _bitmapImg = null;
 	
 	private Report()
 	{}
@@ -50,7 +52,14 @@ public class Report  {
 	{
 		return _base64image;
 	}
-	
+	public static void setImageView(Bitmap img)
+	{
+		_bitmapImg=img;
+	}
+	public static Bitmap getImageView()
+	{
+		return _bitmapImg;
+	}
 	
 	
 }

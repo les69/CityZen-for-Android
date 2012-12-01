@@ -15,7 +15,7 @@ public class SecondActivity extends Activity implements OnClickListener {
 	@Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.second_step);
+        setContentView(R.layout.description);
         txt = (TextView)findViewById(R.id.txt_description);
         Button next = (Button)findViewById(R.id.btn_next);
         next.setOnClickListener(this);
@@ -27,16 +27,16 @@ public class SecondActivity extends Activity implements OnClickListener {
 		String s = category.getSelectedItem().toString();
 		Report.setCategory(s.equalsIgnoreCase("barriera")?Category.BARRIERA:Category.INCIVILTA);
 		
-		if((s.length() == 0) || !Report.setDescription(txt.getText().toString()))
+		if((txt.getText().length() == 0) || !Report.setDescription(txt.getText().toString()))
 		{
 			AlertDialog alertDialog = new AlertDialog.Builder(SecondActivity.this).create();
 			alertDialog.setTitle("An error occured");
-			alertDialog.setMessage("Description must be less than 300 characters");
+			alertDialog.setMessage("Empty description or more than 300 characters");
 			alertDialog.show();
 			return;
 		}
 		//Start new intent
-		Intent i = new Intent(this, third_step.class);
+		Intent i = new Intent(this, ThirdActivity.class);
         startActivity(i);
 		
 		

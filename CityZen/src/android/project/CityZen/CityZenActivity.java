@@ -22,6 +22,7 @@ public class CityZenActivity extends Activity implements OnClickListener {
         first_button.setOnClickListener(this);
     }
     public void onClick(View v) {
+    	//Intent i = new Intent(this, MapActivity.class); uncomment this to go on maps
     	Intent i = new Intent(this, SecondActivity.class);
         startActivity(i);
     }

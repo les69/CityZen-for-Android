@@ -24,24 +24,31 @@ public final class R {
         public static final int yoga=0x7f020003;
     }
     public static final class id {
-        public static final int btn_next=0x7f070006;
-        public static final int button_begin=0x7f070001;
-        public static final int image_firstDisplayed=0x7f070000;
-        public static final int item_category=0x7f070003;
-        public static final int textView1=0x7f070002;
-        public static final int textView2=0x7f070004;
-        public static final int txt_description=0x7f070005;
+        public static final int btn_delete=0x7f070007;
+        public static final int btn_image=0x7f070006;
+        public static final int btn_next=0x7f070004;
+        public static final int btn_next2=0x7f070009;
+        public static final int button_begin=0x7f07000b;
+        public static final int image_firstDisplayed=0x7f07000a;
+        public static final int img_preview=0x7f070008;
+        public static final int item_category=0x7f070001;
+        public static final int textView1=0x7f070000;
+        public static final int textView2=0x7f070002;
+        public static final int txt_description=0x7f070003;
+        public static final int txt_temp=0x7f070005;
     }
     public static final class layout {
-        public static final int main=0x7f030000;
-        public static final int root=0x7f030001;
-        public static final int second_step=0x7f030002;
-        public static final int third_step=0x7f030003;
+        public static final int description=0x7f030000;
+        public static final int main=0x7f030001;
+        public static final int map=0x7f030002;
+        public static final int picture=0x7f030003;
+        public static final int root=0x7f030004;
     }
     public static final class string {
         public static final int BeginButtonText=0x7f050002;
         public static final int Description=0x7f050005;
         public static final int Next=0x7f050003;
+        public static final int Picture=0x7f050007;
         public static final int app_name=0x7f050001;
         public static final int hello=0x7f050000;
         public static final int logo=0x7f050006;
