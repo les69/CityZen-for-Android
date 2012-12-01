@@ -1,7 +1,5 @@
 package android.project.CityZen;
 
-import android.content.Context;
-import android.location.*;
 import android.util.Base64;
 
 enum Category
@@ -9,44 +7,46 @@ enum Category
 	INCIVILTA,
 	BARRIERA
 };
-public class Report {
-	private Context _context;
-	private LocationManager _location;
-	private String _description;
-	private Category _category;
-	private String _base64image;
-	 
+
+public class Report  {
+	private static String _description;
+	private static Category _category;
+	private static String _base64image;
+	private static Report _report = null;
 	
-	
-	Report(){}
-	Report(Context c)
+	private Report()
+	{}
+	public static Report getReport()
 	{
-		_context = c;
+		if(_report != null)
+			return _report;
+		else
+			return new Report();
 	}
-	public boolean setDescription(String s)
+	public static boolean setDescription(String s)
 	{
 		if(s.length() > 300)
 			return false;
 		_description = s;
 		return true;
 	}
-	public String getDescription()
+	public static String getDescription()
 	{ 
 		return _description; 
 	}
-	public void setCategory(Category c)
+	public static void setCategory(Category c)
 	{ 
 		_category = c;
 	}
-	public Category getCategory()
+	public static Category getCategory()
 	{
 		return _category;
 	}
-	public void setImage(byte[] image)
+	public static void setImage(byte[] image)
 	{
 		_base64image = Base64.encodeToString(image, 0);
 	}
-	public String getImage()
+	public static String getImage()
 	{
 		return _base64image;
 	}
