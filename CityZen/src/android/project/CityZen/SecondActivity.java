@@ -36,8 +36,8 @@ public class SecondActivity extends Activity implements OnClickListener {
 			return;
 		}
 		//Start new intent
-		//Intent i = new Intent(this, DemoClass.class);
-        //startActivity(i);
+		Intent i = new Intent(this, third_step.class);
+        startActivity(i);
 		
 		
 	}
