@@ -19,17 +19,17 @@ public final class R {
     }
     public static final class drawable {
         public static final int ic_launcher=0x7f020000;
-        public static final int logo=0x7f020001;
-        public static final int logo2=0x7f020002;
-        public static final int yoga=0x7f020003;
+        public static final int logo3=0x7f020001;
+        public static final int yoga=0x7f020002;
     }
     public static final class id {
-        public static final int btn_delete=0x7f070007;
-        public static final int btn_image=0x7f070006;
+        public static final int RelativeLayout1=0x7f070007;
+        public static final int btn_delete=0x7f070009;
+        public static final int btn_image=0x7f07000a;
         public static final int btn_next=0x7f070004;
-        public static final int btn_next2=0x7f070009;
-        public static final int button_begin=0x7f07000b;
-        public static final int image_firstDisplayed=0x7f07000a;
+        public static final int btn_next2=0x7f07000b;
+        public static final int button_begin=0x7f07000c;
+        public static final int editText1=0x7f070006;
         public static final int img_preview=0x7f070008;
         public static final int item_category=0x7f070001;
         public static final int mymap=0x7f070005;
@@ -44,7 +44,6 @@ public final class R {
         public static final int picture=0x7f030003;
         public static final int root=0x7f030004;
         public static final int second_step=0x7f030005;
-        public static final int third_step=0x7f030006;
     }
     public static final class string {
         public static final int BeginButtonText=0x7f050002;
