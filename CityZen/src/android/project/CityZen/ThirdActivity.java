@@ -50,12 +50,12 @@ public class ThirdActivity extends Activity implements OnClickListener {
 		}
 		if (v == btn_next) {
 			StringBuilder message = new StringBuilder();
-			message.append("Category").append(report.getCategory()).append("\n");
+			message.append("Category: ").append(report.getCategory()).append("\n");
 			message.append("Desc: ").append(report.get_description()).append("\n");
 			message.append("Addr: ").append(report.getAddress()).append("\n");
 			message.append("City: ").append(report.getCity()).append("\n");
 			message.append("Country: ").append(report.getCountry()).append("\n");
-			message.append("Foto").append(report.getImageView() == null ? "no" : "yes").append("\n");
+			message.append("Foto: ").append(report.getImageView() == null ? "no" : "yes").append("\n");
 			Toast.makeText(getBaseContext(), message.toString(), Toast.LENGTH_SHORT).show();
 			
 //			Intent i = new Intent(this, MyMapActivity.class);
