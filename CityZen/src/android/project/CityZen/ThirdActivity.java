@@ -47,7 +47,7 @@ public void onClick(View v) {
 	}
 	if(v == btn_next)
 	{
-		Intent i = new Intent(this, MapActivity.class);
+		Intent i = new Intent(this, MyMapActivity.class);
         startActivity(i);
 	}
 }
