@@ -25,7 +25,7 @@ public class SecondActivity extends Activity implements OnClickListener {
 	{
 		Spinner category =(Spinner)findViewById(R.id.item_category);
 		String s = category.getSelectedItem().toString();
-		Report.setCategory(s.equalsIgnoreCase("barriera")?Category.BARRIERA:Category.INCIVILTA);
+		Report.setCategory(s.equalsIgnoreCase("barriera")?Category.BARRIERA:Category.CIVILTA);
 		
 		if((txt.getText().length() == 0) || !Report.setDescription(txt.getText().toString()))
 		{
