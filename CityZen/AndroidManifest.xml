@@ -6,14 +6,15 @@
     android:versionName="1.0" >
 
     <uses-sdk android:minSdkVersion="14" />
-    
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"/>
-    
+        <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE"></uses-permission>
+      	<uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"></uses-permission>
+    	<uses-permission android:name="android.permission.ACCESS_FINE_LOCATION"></uses-permission>
+    	<uses-permission android:name="android.permission.INTERNET"/>
+		<uses-permission android:name="android.permission.ACCESS_LOCATION" />
+		<uses-permission android:name="android.permission.ACCESS_GPS" />
     <application
         android:icon="@drawable/ic_launcher"
-        android:label="@string/app_name" android:theme="@android:style/Theme.Holo.Light.NoActionBar">
+        android:label="@string/app_name" >
         <activity
             android:label="@string/app_name"
             android:name=".CityZenActivity" >
@@ -23,14 +24,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="MyMapActivity"></activity>
+        
+        <activity android:name=".TempMapActivity" ></activity>
         <activity android:name=".SecondActivity"></activity>
         <activity android:name=".ThirdActivity"></activity>
-     	
-     	<uses-library android:name="com.google.android.maps" />
-      
+        <activity android:name=".SubmitActivity" ></activity>
+        <activity android:name=".MyMapActivity" ></activity>
+        
+     <uses-library android:name="com.google.android.maps"/>
     </application>
-    
-   
+
    
 </manifest>

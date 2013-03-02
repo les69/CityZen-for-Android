@@ -3,6 +3,7 @@ package android.project.CityZen;
 import java.util.List;
 import java.util.Locale;
 
+import android.app.AlertDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.location.Address;
@@ -14,6 +15,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -34,45 +36,27 @@ public class MyMapActivity extends MapActivity implements OnClickListener {
 	private LocationManager locationManager;
 	private Address address;
 
-	/** Called when the activity is first created. */
+	
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
-		setContentView(R.layout.map);
+		setContentView(R.layout.map2);
 
-		initMap();
-		initMyLocation();
+
 
 		Button next = (Button) findViewById(R.id.btn_next);
 		next.setOnClickListener(this);
+		//initMyLocation();
 	}
 
-	/**
-	 * Initialise the map and adds the zoomcontrols to the LinearLayout.
-	 */
-	private void initMap() {
-		myAddress = (TextView) findViewById(R.id.editText1);
-		myMap = (MapView) findViewById(R.id.mymap);
-		myMap.setBuiltInZoomControls(true);
-		myMap.displayZoomControls(true);
-
-		mapController = myMap.getController();
-		mapController.setZoom(16);
-
-	}
-
-	/**
-	 * Initialises the MyLocationOverlay and adds it to the overlays of the map
-	 */
 	private void initMyLocation() {
 
 		locationManager = (LocationManager) this.getSystemService(Context.LOCATION_SERVICE);
-		locationListener = new GPSLocationListener();
+		//locationListener = new GPSLocationListener();
 
-		locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
+		//locationManager.requestLocationUpdates(LocationManager.GPS_PROVIDER, 0, 0, locationListener);
 
 		Location myLocation = locationManager.getLastKnownLocation(LocationManager.NETWORK_PROVIDER);
-
 		if (myLocation == null)
 			myLocation = locationManager.getLastKnownLocation(LocationManager.GPS_PROVIDER);
 
@@ -80,18 +64,39 @@ public class MyMapActivity extends MapActivity implements OnClickListener {
 
 		if (myLocation == null) 
 			Toast.makeText(getBaseContext(), "Problem getting current position", Toast.LENGTH_SHORT).show();
-
-		MyLocationOverlay myLocOverlay = new MyLocationOverlay(this, myMap);
-		myLocOverlay.enableMyLocation();
-		myMap.getOverlays().add(myLocOverlay);
-		updatePosition(myLocation);
+		
+		double lat = myLocation.getLatitude(), lon = myLocation.getLongitude();
+		Geocoder gc = new Geocoder(MyMapActivity.this.getApplicationContext(), Locale.getDefault());
+		List<Address> addresses = null;
+		try {
+			addresses = gc.getFromLocation(lat, lon, 1);
+		} catch (Exception e) {
+		}
+		StringBuilder result = new StringBuilder();
+		if (addresses != null && addresses.size() > 0) {
+			address = addresses.get(0);
+			result.append(address.getAddressLine(0));
+			result.append(", ");
+			result.append(address.getLocality());
+			result.append(", ");
+			result.append(address.getCountryName());
+			myAddress.setText(result.toString());
+		}
+		AlertDialog alertDialog = new AlertDialog.Builder(MyMapActivity.this).create();
+		alertDialog.setTitle("An error occured");
+		alertDialog.setMessage(result);
+		alertDialog.show();
+		EditText txt = (EditText)findViewById(R.id.editText1);
+		txt.setText(result);
+	
 	}
 
 	protected boolean isRouteDisplayed() {
 		return false;
 	}
-
+/**
 	private void updatePosition(Location location) {
+		
 		GeoPoint point = new GeoPoint((int) (location.getLatitude() * 1E6), (int) (location.getLongitude() * 1E6));
 		mapController.animateTo(point);
 		double lat = location.getLatitude(), lon = location.getLongitude();
@@ -112,12 +117,12 @@ public class MyMapActivity extends MapActivity implements OnClickListener {
 			result.append(address.getCountryName());
 			myAddress.setText(result.toString());
 		}
-	}
-	
+	}**/
+	/**
 	private class GPSLocationListener implements LocationListener {
 		
 		public void onLocationChanged(Location location) {
-			if (location != null) {
+			//if (location != null) {
 				updatePosition(location);
 			}
 		}
@@ -135,10 +140,10 @@ public class MyMapActivity extends MapActivity implements OnClickListener {
 		public void onStatusChanged(String provider, int status, Bundle extras) {
 			// TODO Auto-generated method stub
 		}
-	}
+	}**/
 	
 	public void onClick(View v) {
-		Report report = Report.getReport();
+		/**Report report = Report.getReport();
 		if (address != null || myAddress.getText().length() == 0) {
 			report.setAddress(address.getAddressLine(0));
 			report.setCity(address.getLocality());
@@ -146,9 +151,9 @@ public class MyMapActivity extends MapActivity implements OnClickListener {
 		} else {
 			Toast.makeText(getBaseContext(), "Empty address, please insert manually", Toast.LENGTH_SHORT).show();
 			return;
-		}
+		}**/
 		
-		Intent i = new Intent(this, SecondActivity.class);
+		Intent i = new Intent(this, SubmitActivity.class);
 		startActivity(i);
 	}
 }

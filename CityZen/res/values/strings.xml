@@ -1,17 +1,18 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="hello">CityZenActivity!</string>
+    <string name="hello">Hello World, CityZenActivity!</string>
     <string name="app_name">CityZen</string>
-    <string name="BeginButtonText">Segnala!</string>
+    <string name="BeginButtonText">Crea una segnalazione</string>
     <string name="Next">Next</string>
     <string name="txtCategory">Category</string>
     <string-array name="category_array">
-        <item>Incivilt&#225;</item>
+        <item>Inciviltà</item>
         <item>Barriera</item>
     </string-array>
         <string name="Description">Description</string>
     <string name="logo">Logo Applicazione</string>
     <string name="Picture">Take a picture</string>
-    <string name="mapskey">00dEQG4JAA9KyODcTgeDFBY-hAr14OuE7qdnVsw</string>
+    <string name="Submit">Submit</string>
+    <string name="mapskey">09x8Wt7pKeSWETTCiq96JVg-Rnh12OOB5Besg_Q</string>
 </resources>

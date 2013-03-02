@@ -14,6 +14,7 @@ public final class R {
     public static final class attr {
     }
     public static final class color {
+        public static final int Black=0x7f040002;
         public static final int red=0x7f040001;
         public static final int white=0x7f040000;
     }
@@ -23,37 +24,45 @@ public final class R {
         public static final int yoga=0x7f020002;
     }
     public static final class id {
-        public static final int RelativeLayout1=0x7f070007;
-        public static final int btn_delete=0x7f070009;
-        public static final int btn_image=0x7f07000a;
+        public static final int RelativeLayout1=0x7f070006;
+        public static final int btn_avanti=0x7f070005;
+        public static final int btn_delete=0x7f070008;
+        public static final int btn_image=0x7f070009;
         public static final int btn_next=0x7f070004;
-        public static final int btn_next2=0x7f07000b;
-        public static final int button_begin=0x7f07000c;
-        public static final int editText1=0x7f070006;
-        public static final int img_preview=0x7f070008;
+        public static final int btn_next2=0x7f07000a;
+        public static final int btn_submit=0x7f07000e;
+        public static final int button_begin=0x7f07000b;
+        public static final int editText1=0x7f07000c;
+        public static final int edit_position=0x7f070010;
+        public static final int img_preview=0x7f070007;
         public static final int item_category=0x7f070001;
-        public static final int mymap=0x7f070005;
+        public static final int mymap=0x7f07000f;
         public static final int textView1=0x7f070000;
         public static final int textView2=0x7f070002;
+        public static final int txtOut=0x7f07000d;
         public static final int txt_description=0x7f070003;
     }
     public static final class layout {
         public static final int description=0x7f030000;
         public static final int main=0x7f030001;
-        public static final int map=0x7f030002;
+        public static final int map2=0x7f030002;
         public static final int picture=0x7f030003;
         public static final int root=0x7f030004;
         public static final int second_step=0x7f030005;
+        public static final int submit=0x7f030006;
+        public static final int tempmap=0x7f030007;
+        public static final int third_step=0x7f030008;
     }
     public static final class string {
         public static final int BeginButtonText=0x7f050002;
         public static final int Description=0x7f050005;
         public static final int Next=0x7f050003;
         public static final int Picture=0x7f050007;
+        public static final int Submit=0x7f050008;
         public static final int app_name=0x7f050001;
         public static final int hello=0x7f050000;
         public static final int logo=0x7f050006;
-        public static final int mapskey=0x7f050008;
+        public static final int mapskey=0x7f050009;
         public static final int txtCategory=0x7f050004;
     }
 }
